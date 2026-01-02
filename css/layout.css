@@ -84,7 +84,7 @@
 }
 
 .menu-logo{
-    padding-left: 60px;
+    padding-left: 20px;
     max-height: 60px;
     width: auto;
     display: block;
@@ -578,4 +578,5 @@
     .video-item {
         height: 200px; /* Slightly shorter for smaller screens */
     }
+
 }
