@@ -64,8 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         lbVidYT.src = src;
                         lbVidYT.style.display = 'block';
                     } else {
+                        // For local videos, we must call .load() after changing the .src
                         lbVidLocal.src = src;
                         lbVidLocal.style.display = 'block';
+                        lbVidLocal.load(); // Forces the browser to fetch the new video file
+                        lbVidLocal.play().catch(e => console.log("Auto-play blocked")); 
                     }
                 }
                 lightbox.classList.add('active');
@@ -105,4 +108,5 @@ function filterGallery(category) {
             item.classList.add('hide');
         }
     });
+
 }
