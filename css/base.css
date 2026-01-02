@@ -1,0 +1,61 @@
+/* base.css - Defaults & Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body); /* [cite: 363] */
+    color: var(--color-navy); /* [cite: 364] */
+    background-color: var(--color-white); /* [cite: 365] */
+    line-height: 1.6; /* [cite: 366] */
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading); /* [cite: 369] */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Section Spacing [cite: 380] */
+section {
+    padding: 4rem 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+.bg-navy {
+    background-color: var(--color-navy); /* [cite: 9, 27] */
+}
+
+.bg-light-grey {
+    background-color: var(--color-grey-light); /* [cite: 87] */
+}

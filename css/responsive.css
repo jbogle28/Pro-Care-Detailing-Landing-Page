@@ -1,0 +1,33 @@
+/* responsive.css - Mobile-specific overrides */
+
+/* Hide mobile elements on desktop */
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+
+    /* Sticky Mobile Footer */
+    .sticky-bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: var(--color-navy);
+        padding: 15px 20px;
+        border-top: 2px solid var(--color-light-blue);
+        z-index: 9999;
+    }
+
+    .sticky-flex {
+        color: white;
+        font-weight: 600;
+    }
+
+    /* Adjust typography for smaller screens */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+}

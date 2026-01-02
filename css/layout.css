@@ -1,0 +1,581 @@
+/* layout.css */
+/*Structure & Grids */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Footer Flex */
+.nav-flex, .footer-grid, .sticky-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* This turns the active link light blue and makes it bold */
+.nav-links li a.active {
+    color: var(--color-light-blue) !important;
+    font-weight: 700;
+}
+
+/* Standard Responsive Grid */
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+/* layout.css */
+
+/* 2x2 Grid Formation */
+.grid-2x2 {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+    max-width: 900px; /* Constrains the width so the cards don't get too wide */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensure the "Popular" scale doesn't overlap other cards */
+.pricing-card.popular {
+    z-index: 2;
+}
+
+/* Mobile responsive: Stack 2x2 into 1x4 */
+@media (max-width: 600px) {
+    .grid-2x2 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.grid-2-col { grid-template-columns: repeat(2, 1fr); }
+.grid-3-col { grid-template-columns: repeat(3, 1fr); }
+
+/* Section Spacing */
+.section {
+    padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+    .grid-2-col, .grid-3-col {
+        grid-template-columns: 1fr;
+    }
+    .section {
+        padding: 50px 0;
+    }
+}
+
+
+
+/* HEADER--------------------------------------------------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between; /* Pushes logo and nav-links apart */
+    align-items: center; /* Centers items vertically */
+    padding: 1rem 0;
+}
+
+.menu-logo{
+    padding-left: 60px;
+    max-height: 60px;
+    width: auto;
+    display: block;
+
+}
+
+/* --- Desktop Navigation --- */
+.nav-links {
+    display: flex;       /* This aligns the list items left to right */
+    list-style: none;    /* Removes the bullet points */
+    gap: 30px;           /* Adds space between your menu items */
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--color-white); /* Makes text visible on the white bar */
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--color-light-blue);
+}
+
+/* Hide the hamburger on desktop */
+.hamburger {
+    display: none; 
+}
+
+@media (max-width: 768px) {
+    /* 1. The Hamburger Container (the blue square/circle) */
+    .hamburger {
+        background-color: var(--color-light-blue);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Center the lines horizontally */
+        gap: 4px; /* Slightly tighter gap for a cleaner look */
+        cursor: pointer;
+        z-index: 1100;
+        width: 40px;  /* Increased size slightly for better tap target */
+        height: 40px;
+        margin-right: 15px;
+        /* ROUNDED EDGES FOR THE BOX */
+        border-radius: 8px; /* Use 50% if you want it to be a perfect circle */
+        
+        transition: 0.3s ease;
+    }
+
+    /* 2. The Individual Lines */
+    .hamburger span {
+        display: block;
+        width: 22px; 
+        height: 3px;
+        background-color: white; /* White shows up best on the light blue */
+        
+        /* ROUNDED EDGES FOR THE LINES */
+        border-radius: 10px; 
+        
+        transition: 0.3s ease;
+    }
+
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%; 
+        width: 60%; 
+        height: calc(100vh - 70px); /* Adjust height to account for the top offset */
+        background-color: var(--color-navy);
+        flex-direction: column;
+        
+        /* CHANGE THESE TWO LINES */
+        justify-content: flex-start; /* Moves items to the top instead of center */
+        padding-top: 40px;           /* Adjust this number to move words higher or lower */
+        
+        align-items: center;
+        transition: 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* This is the class JavaScript will toggle */
+    .nav-links.active {
+        right: 0;
+    }
+
+
+
+/* 3. Animation to White X */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: white; /* Turns white so it shows on Navy menu */
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: white;
+    }
+}
+
+/* FOOTER--------------------------------------------------- */
+.footer-logo {
+    height: 60px; /* Slightly larger than the nav logo */
+    width: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr; /* Three balanced columns */
+    gap: 40px;
+    padding-bottom: 30px;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.web-link:hover {
+    color: var(--color-light-blue);
+    transform: translateX(5px);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.social-link i {
+    font-size: 1.4rem;
+    color: var(--color-light-blue); /* Icons stand out in light blue */
+}
+
+.social-link:hover {
+    color: var(--color-light-blue);
+    transform: translateX(5px);
+}
+
+.border-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo-box p {
+    margin: 0;           /* Removes default paragraph spacing that breaks alignment */
+    font-weight: 600;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;  /* Centers logo and text vertically */
+    gap: 15px;            /* Space between logo and text */
+    margin-bottom: 20px;
+    
+}
+
+/* 5. Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-logo-box {
+        flex-direction: column; /* Stack logo/text on mobile */
+        justify-content: center;
+    }
+    
+    .social-link {
+        justify-content: center; /* Center social links on mobile */
+    }
+}
+
+
+/*BEFORE AND AFTER SLIDER*/
+
+.simple-ba-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Landscape resize */
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.simple-ba-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.6s ease-in-out; /* Smooth fade speed */
+}
+
+/* Before image sits on top */
+.img-before {
+    z-index: 2;
+    opacity: 1;
+}
+
+/* After image stays behind */
+.img-after {
+    z-index: 1;
+}
+
+/* When hovering/tapping, hide the "Before" image */
+.simple-ba-container:hover .img-before {
+    opacity: 0;
+}
+
+/* Small Badge Style */
+.ba-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(58, 190, 249, 0.9); /* Your light blue */
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    z-index: 3;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.simple-ba-container:hover .ba-badge {
+    opacity: 0; /* Hide badge when viewing results */
+}
+
+/*HOME PAGE WHAT WE CLEAN*/
+.cleaning-items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 20px;
+}
+
+.check-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.check-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.check-card i {
+    color: var(--color-light-blue);
+    font-size: 1.5rem;
+    flex-shrink: 0; /* Prevents icon from squishing */
+}
+
+.check-card p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--color-navy);
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .cleaning-items-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .cleaning-items-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+}
+
+
+/*HIGHLIGHT BANNER*/
+
+.sticky-banner {
+    position: -webkit-sticky; /* Support for Safari */
+    position: sticky;
+    top: 90px; /* ADJUST THIS to the height of your navigation bar */
+    z-index: 998; /* Keeps it above other content but below the mobile menu dropdown */
+}
+
+.highlight-banner {
+    background-color: var(--color-light-blue);
+    color: white;
+    padding: 12px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.marquee-content {
+    display: flex;
+    animation: scroll-marquee 30s linear infinite; /* Slightly slower for readability */
+}
+
+.marquee-content span {
+    padding-right: 60px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.marquee-content i {
+    font-size: 1.1rem;
+}
+
+@keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+.highlight-banner:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+.guarantee-banner {
+    background-color: var(--color-navy);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(11, 28, 45, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(58, 190, 249, 0.3);
+    max-width: 800px;
+    margin: 0 auto 80px auto; /* 80px space added to the BOTTOM */
+}
+
+/* Add a subtle decorative glow in the corner */
+.guarantee-banner::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: var(--color-light-blue);
+    filter: blur(80px);
+    opacity: 0.2;
+}
+
+.guarantee-icon {
+    font-size: 4rem; /* Larger for better impact */
+    color: var(--color-light-blue);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    /* This adds a soft 'glow' behind the shield */
+    filter: drop-shadow(0 0 10px rgba(236, 247, 252, 0.4));
+}
+
+
+.guarantee-banner h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.guarantee-banner .divider {
+    width: 60px;
+    height: 4px;
+    background: var(--color-light-blue);
+    margin: 1.5rem auto;
+    border-radius: 2px;
+}
+
+.guarantee-banner p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.guarantee-banner strong {
+    color: var(--color-light-blue);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .guarantee-banner {
+        padding: 2rem 1.5rem;
+    }
+    .guarantee-banner h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/*gallery before and after video*/
+/* The main wrapper for all your comparison blocks */
+.transformations-gallery-grid {
+    display: grid;
+    /* Desktop: 5 columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Individual Comparison Block */
+.video-comparison-section {
+    width: 100%; /* Now takes up the width of the grid column */
+    background: #fff;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+/* The pair of videos inside the block */
+.video-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Before/After side-by-side */
+    gap: 5px;
+}
+
+.video-item {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 250px; /* Shorter height so they don't look stretched in 5 columns */
+    background: #111;
+}
+
+.comparison-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Professional Rounded Labels */
+.video-label {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: white;
+    z-index: 5;
+    text-transform: uppercase;
+}
+
+.video-label.before {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.video-label.after {
+    background: var(--color-light-blue);
+    box-shadow: 0 2px 10px rgba(58, 190, 249, 0.4);
+}
+
+/* Mobile & Tablet Adjustments */
+@media (max-width: 1200px) {
+    .transformations-gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .transformations-gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+        gap: 10px;
+    }
+    
+    .video-item {
+        height: 200px; /* Slightly shorter for smaller screens */
+    }
+}

@@ -1,0 +1,259 @@
+/* pages.css */
+.header {
+    background-color: var(--color-navy);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Keeps menu on top of other content */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* pages.css - Page Unique Styles */
+
+/* Home Hero */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(rgba(11, 28, 45, 0.8), rgba(11, 28, 45, 0.8)), 
+                url('../images/hero-bg.jpeg'); /* Add a nice background image here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0; /* Adjusts the height/vertical space of the section */
+    min-height: 60vh; /* Ensures the hero has good presence on the screen */
+    display: flex;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Pricing Rows */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pricing-table tr {
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-table td {
+    padding: 15px 0;
+}
+
+.popular-row {
+    color: var(--color-light-blue);
+    font-weight: bold;
+}
+
+/*GALLERY  */
+/* Gallery Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    gap: 25px;
+}
+.gallery-item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.reel-container {
+    position: relative;
+    border-radius: 15px; /* Keeps your rounded edges */
+    overflow: hidden;
+    aspect-ratio: 16 / 9; /* Standard widescreen landscape */
+    background: #000;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.reel-container video, .reel-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+/* Hover Effect */
+.reel-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 28, 45, 0.6); /* Navy tint on hover */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+    color: white;
+    font-weight: 600;
+}
+
+.reel-container:hover .reel-overlay {
+    opacity: 1;
+}
+
+/* Filter Buttons */
+.filter-bar {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid var(--color-navy);
+    background: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--color-navy);
+    color: white;
+}
+
+/* Hide filtered items */
+.gallery-item.hide {
+    display: none;
+}
+
+@media (max-width: 992px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .gallery-grid { grid-template-columns: 1fr; } }
+
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 1100px; /* Limits size on large laptops */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox-img, 
+#lightbox-video-local {
+    max-width: 100%;
+    max-height: 85vh; /* Prevents media from being taller than the screen */
+    width: auto;      /* Allows the media to keep its natural aspect ratio */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+
+/*ABOUT US*/
+/* Founder Image Styling */
+.founder-frame {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 10px;
+    border: 3px dashed var(--color-light-blue); /* Stylish dashed border */
+    display: inline-block;
+}
+
+.founder-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* How We Work Icons */
+.step-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: var(--color-white);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.work-step {
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.work-step:hover {
+    transform: translateY(-5px);
+}
+
+/* Team Section */
+.team-img-frame {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px; /* Squircle look for team members */
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.team-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*Why Pro- Care/
+/* Why Us Page Specifics */
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.step-list {
+    counter-reset: my-counter;
+    list-style: none;
+    padding: 0;
+}
+
+.step-list li {
+    counter-increment: my-counter;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 45px;
+}
+
+.step-list li::before {
+    content: counter(my-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--color-light-blue);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.guarantee-banner {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.img-rounded {
+    border-radius: var(--radius-lg);
+    width: 100%;
+    height: auto;
+    box-shadow: var(--shadow-soft);
+}

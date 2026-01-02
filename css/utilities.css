@@ -1,0 +1,14 @@
+/* utilities.css - Helper Classes */
+.text-center { text-align: center; }
+.text-white { color: var(--color-white); }
+.text-navy { color: var(--color-navy); }
+.text-light-blue { color: var(--color-light-blue); }
+
+.mt-sm { margin-top: 1rem; }
+.mt-md { margin-top: 2rem; }
+.mt-lg { margin-top: 4rem; }
+
+.full-width { width: 100%; }
+
+.bg-navy { background-color: var(--color-navy); }
+.bg-light { background-color: var(--color-grey-light); }

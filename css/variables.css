@@ -1,0 +1,21 @@
+/* variables.css - Your Design System */
+:root {
+    /* Brand Colors [cite: 9, 11, 345, 347] */
+    --color-navy: #0b1c2d;
+    --color-light-blue: #3fb8ff;
+    --color-white: #ffffff;
+    --color-grey-light: #f8f9fa;
+    --color-whatsapp: #25d366;
+
+    /* Typography [cite: 13, 14, 352, 353] */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Border Radius & Shadows [cite: 5, 207, 349, 351] */
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+    /* Animation Transitions [cite: 6, 197] */
+    --transition-smooth: all 0.3s ease;
+}

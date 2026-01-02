@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Care Upholstery Detailing | Premium Interior Detailing Jamaica</title>
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+</head>
+<body>
+    <header class="header">
+        <nav class="container nav-flex">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Pro-Care Logo"  class="menu-logo">
+                </a>
+            </div>
+
+            <div class="hamburger" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="why.html">Why Pro-Care</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="btn-light-blue">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="highlight-banner sticky-banner">
+        <div class="marquee-content">
+            <span><i class="fab fa-whatsapp"></i> WhatsApp photos to 876-771-5258 for quotations • </span>
+            <span><i class="fab fa-whatsapp"></i> WhatsApp photos to 876-771-5258 for quotations • </span>
+            <span><i class="fab fa-whatsapp"></i> WhatsApp photos to 876-771-5258 for quotations • </span>
+            <span><i class="fab fa-whatsapp"></i> WhatsApp photos to 876-771-5258 for quotations • </span>
+            <span><i class="fab fa-whatsapp"></i> WhatsApp photos to 876-771-5258 for quotations • </span>
+            <span><i class="fab fa-whatsapp"></i> WhatsApp photos to 876-771-5258 for quotations • </span>
+            <span><i class="fab fa-whatsapp"></i> WhatsApp photos to 876-771-5258 for quotations • </span>
+            <span><i class="fab fa-whatsapp"></i> WhatsApp photos to 876-771-5258 for quotations • </span>
+        </div>
+    </div>
+    <main>
+        <section class="section container">
+            <div class="form-container-centered">
+                <form action="https://formspree.io/f/meeoedrq" method="POST" id="bookingForm" class="card card-shadow">
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                    <h2 class="text-center mb-md">Book Your Service</h2>
+                    
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="custName" name="Full Name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="grid grid-2-col">
+                        <div class="form-group">
+                            <label>WhatsApp Number</label>
+                            <input type="tel" id="custPhone" name="WhatsApp Number" placeholder="876-000-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email for Receipt/Invoice</label>
+                            <input type="email" id="custEmail" name="_replyto" placeholder="email@example.com" required>                        </div>
+                    </div>
+
+                    <div class="grid grid-2-col">
+                        <div class="form-group">
+                            <label>Address Line</label>
+                            <input type="text" id="custAddress" name="Address" placeholder="Street name and number" required>                        </div>
+                        <div class="form-group">
+                            <label>Parish</label>
+                            <select id="custParish" name="Parish">
+                                <option>Kingston / St. Andrew</option>
+                                <option>St. Catherine / Portmore</option>
+                                <option>St. Thomas</option>
+                                <option>St. Ann</option>
+                                <option>Manchester</option>
+                                <option>St. James</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Requested Date</label>
+                        <input type="date" id="bookDate" name="Requested Date" required>
+                    </div>
+
+                    <hr class="mt-sm mb-sm">
+
+                    <div class="service-selection">
+                        <label><strong>Select Services:</strong></label>
+                        
+                        <details class="category-dropdown">
+                            <summary>Upholstery & Furniture</summary>
+                            <div class="checkbox-group">
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="5000" value="1 Seater Couch"> 1 Seater Couch ($5,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="8000" value="Love Seat"> Love Seat ($8,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="16000" value="Sectional Couch"> Sectional Couch ($16,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="6500" value="Single Recliner"> Single Recliner ($6,500)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="1500" value="Dining Chair"> Dining Chair ($1,500)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="2500" value="Ottoman"> Ottoman ($2,500)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="9000" value="Queen Mattress"> Queen Mattress ($9,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="5500" value="Medium Rug"> Area Rug (Medium) ($5,500)</label>
+                            </div>
+                        </details>
+
+                        <details class="category-dropdown">
+                            <summary>Vehicle Interior Detailing</summary>
+                            <div class="checkbox-group">
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="8000" value="Small Car Detail"> Small Car ($8,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="10000" value="Sedan Detail"> Sedan ($10,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="12000" value="SUV/Pickup Detail"> SUV / Pickup ($12,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="14000" value="Large Van Detail"> Large Van / 7-Seater ($14,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="3500" value="Wash & Vacuum"> Wash & Vacuum Maintenance ($3,500)</label>
+                            </div>
+                        </details>
+
+                        <details class="category-dropdown">
+                            <summary>Surface Washing</summary>
+                            <div class="checkbox-group">
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="4000" value="Sidewalk Wash"> Sidewalk / Walkway ($4,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="8000" value="Driveway Wash"> Driveway Wash ($8,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="6000" value="Patio Wash"> Patio / Deck ($6,000)</label>
+                                <label class="check-item"><input type="checkbox" class="svc" data-price="10000" value="Exterior Walls"> Exterior Walls ($10,000)</label>
+                                <label class="check-item"><input type="checkbox" id="bleachAddon" data-price="2000" value="Bleach Treatment"> Add Bleach Treatment (+$2,000)</label>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="price-display mt-md">
+                        <div class="total-row"><span>Total Estimate:</span> <span id="totalPrice">$0</span></div>
+                        <div class="deposit-row"><span>Required Deposit (30%):</span> <span id="depositPrice">$0</span></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-light-blue w-100 mt-md" id="submitBtn">
+                        <span class="btn-text">Request Booking</span>
+                        <span class="btn-spinner"></span>
+                    </button>
+                    <div class="disclaimer-box mt-lg">
+                        <h4 class="text-navy">⚠️ Deposit Requirements</h4>
+                        <p>A <strong>30% non-refundable deposit</strong> is required to secure your date. Bookings requested without the deposit are <strong>not confirmed</strong>.</p>
+                        
+                        <div class="bank-details mt-sm">
+                            <p><strong>Bank:</strong> National Commercial Bank</p>
+                            <p><strong>Account Name:</strong> Pro-Care Detailing</p>
+                            <p><strong>Type:</strong> Downtown/ Matilda's Corner</p>
+                            <p><strong>Account Number:</strong> XXXXXXXXX</p>
+                            <p><strong>Type:</strong> Savings</p>
+                        </div>
+
+                        <p class="mt-sm"><strong>Final Step:</strong> Screenshot your receipt and WhatsApp it to <strong>876-771-5258</strong>. Include your name in the message.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+            
+    </main>
+
+    <footer class="footer bg-navy text-white">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="footer-logo-box">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Pro-Care Logo" class="footer-logo">
+                    </a>    
+                    </div>
+                <p>Premium Upholstery & Interior Detailing in Jamaica.</p>
+                <p class="mt-xs">📍 Serving Kingston, St. Catherine & St. Thomas</p>
+                <p>⏰ Mon - Sat: 8:00 AM - 5:00 PM</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html" class="web-link">Home</a></li>
+                    <li><a href="services.html" class="web-link">Services</a></li>
+                    <li><a href="why.html" class="web-link">Why Pro-Care</a></li>
+                    <li><a href="contact.html" class="web-link">Book Now</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://facebook.com/Pro-CareDetailingJM" target="_blank" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Pro-Care Detailing JM</span>
+                </a> 
+                <a href="https://instagram.com/pro.caredetailingjm" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    <span>pro.caredetailingjm</span>
+                </a> 
+                <a href="https://youtube.com/@Pro-CareDetailingJM" target="_blank" class="social-link">
+                    <i class="fab fa-youtube"></i>
+                    <span>Pro-Care Detailing JM</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="text-center mt-md border-top pt-sm">
+            <p>&copy; 2026 Pro-Care Detailing. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="sticky-bottom-bar mobile-only">
+    <div class="sticky-flex">
+        <span>Questions?</span>
+            <a href="https://wa.me/18767715258" class="btn btn-light-blue">WhatsApp Us</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
